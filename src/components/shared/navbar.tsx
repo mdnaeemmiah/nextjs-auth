@@ -2,18 +2,16 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-import { useSession, signIn, signOut } from "next-auth/react";
-import { Button } from "@/components/ui/button";
+import {  signOut } from "next-auth/react";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback} from "@/components/ui/avatar";
 
 const Navbar = () => {
 //   const { data: session } = useSession();
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+//   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
-    <nav className="bg-gray-900 text-white py-4 px-6">
+    <nav className="bg-orange-400 text-white py-4 px-6">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="text-xl font-semibold text-white hover:text-gray-400">
@@ -22,10 +20,13 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <div className="hidden md:flex space-x-6">
+        <Link href="/" className="hover:text-gray-400">
+            Home
+          </Link>
           <Link href="/about" className="hover:text-gray-400">
             About Us
           </Link>
-          <Link href="/contact" className="hover:text-gray-400">
+          <Link href="/contactUs" className="hover:text-gray-400">
             Contact Us
           </Link>
         </div>
@@ -50,9 +51,9 @@ const Navbar = () => {
               </DropdownMenuContent>
             </DropdownMenu>
           {/* ) : ( */}
-            <Button variant="outline" onClick={() => signIn()} className="border-white text-white">
+            <Link href="/login"  className="border-white text-white">
               Login
-            </Button>
+            </Link>
           {/* )} */}
         </div>
       </div>

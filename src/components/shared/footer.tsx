@@ -1,10 +1,11 @@
 // components/Footer.tsx
+"use client";
 import Link from "next/link";
 import { Facebook, Twitter, Github, Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-gray-300 py-6">
+    <footer className="bg-orange-400 text-gray-300 py-6">
       <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
         {/* Logo / Brand */}
         <div className="text-xl font-semibold">

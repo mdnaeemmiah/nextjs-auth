@@ -26,12 +26,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
+      <body cz-shortcut-listen="true"
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-       <div className="min-h-screen">
         <Navbar></Navbar>
-       {children}
+       <div className="min-h-screen" suppressHydrationWarning>
+            {children}
        </div>
         <Footer></Footer>
       </body>
